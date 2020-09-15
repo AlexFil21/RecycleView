@@ -7,15 +7,7 @@ import com.example.newrv.App
 import com.example.newrv.ROOM.Table
 
 class MyHandler : ViewModel() {
-    var a : App? = null
-    private var tableLiveData : MutableLiveData<List<Table>>  = a!!.getInstanceData().getTableDao().getAllLiveData()
-
-    fun getTableLiveData() : LiveData<List<Table>> {
-        return tableLiveData
-    }
-
-    fun addTableData (table: Table) {
-        a!!.getInstanceData().getTableDao().insertAll(table)
-    }
-
+    var a : App
+    get() { return a }
+    set(value) { a = value }
 }

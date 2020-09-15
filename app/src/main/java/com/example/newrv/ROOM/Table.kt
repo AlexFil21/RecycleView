@@ -5,10 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Table (
-    @PrimaryKey (autoGenerate = true)
-    val uid: Int,
+data class Table(
+    @PrimaryKey (autoGenerate = true) val uid: Int,
 
-    @ColumnInfo(name = "first_column")
-    var textColumn: String?
+    @ColumnInfo(name = "first_column") var textColumn: String
 )

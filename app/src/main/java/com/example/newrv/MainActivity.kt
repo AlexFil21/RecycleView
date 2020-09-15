@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
-        handler.getTableLiveData().observe(this, Observer {
+        handler.a!!.getTableDao().getAllLiveData().observe(this, Observer {
                 Log.i("Info", it.size.toString())
         })
     }

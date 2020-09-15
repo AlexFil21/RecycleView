@@ -9,6 +9,7 @@ import com.example.newrv.viewModel.MyHandler
 class AddItemActivity : AppCompatActivity() {
     val handler = MyHandler()
     var table : Table? = null
+    lateinit var list : ArrayList<Table>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +18,8 @@ class AddItemActivity : AppCompatActivity() {
         add_new_item_btn.setOnClickListener({
             if (new_item_text_field.text.length > 0) {
                 table?.textColumn = new_item_text_field.text.toString()
-                handler.addTableData(table!!)
+                list.add(Table(0, new_item_text_field.text.toString()))
+                handler.a.setTableDao(list)
             }
         })
 
