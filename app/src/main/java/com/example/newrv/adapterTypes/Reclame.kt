@@ -1,6 +1,4 @@
-package adapterTypes
-
-import android.graphics.drawable.Drawable
+package com.example.newrv.adapterTypes
 
 class Reclame(private val img: Int) {
     fun getImage() : Int {

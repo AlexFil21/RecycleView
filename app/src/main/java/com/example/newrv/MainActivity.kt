@@ -1,18 +1,24 @@
 package com.example.newrv
-import adapterTypes.Description
-import adapterTypes.Header
-import adapterTypes.Reclame
+import com.example.newrv.adapterTypes.Description
+import com.example.newrv.adapterTypes.Header
+import com.example.newrv.adapterTypes.Reclame
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newrv.viewModel.MyHandler
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 
 class MainActivity : AppCompatActivity() {
     private var list: RecyclerView? = null
     private var recyclerAdapter: MainAdapter? = null
-
+    var handler = MyHandler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,19 +33,21 @@ class MainActivity : AppCompatActivity() {
         chatsList.add(Description("Drake"))
         chatsList.add(Reclame(R.drawable.reclame))
         chatsList.add(Description("Cardi B"))
-        chatsList.add(Description("Drake"))
-        chatsList.add(Description("Cardi B"))
-        chatsList.add(Description("Drake"))
-        chatsList.add(Reclame(R.drawable.reclame))
-        chatsList.add(Description("Cardi B"))
-        chatsList.add(Description("Drake"))
-        chatsList.add(Description("Cardi B"))
-        chatsList.add(Description("Drake"))
-        chatsList.add(Reclame(R.drawable.reclame))
+
 
         val layoutManager = LinearLayoutManager(this)
         list!!.setLayoutManager(layoutManager)
-        recyclerAdapter = MainAdapter(this, chatsList)
+       // recyclerAdapter = MainAdapter(this, chatsList)
         list!!.setAdapter(recyclerAdapter)
+
+        addNewItem.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, AddItemActivity::class.java)
+            startActivity(intent)
+        })
+
+        handler.getTableLiveData().observe(this, Observer {
+                Log.i("Info", it.size.toString())
+        })
     }
+
 }

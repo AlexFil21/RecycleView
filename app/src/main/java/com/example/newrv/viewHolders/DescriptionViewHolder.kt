@@ -1,6 +1,6 @@
-package viewHolders
+package com.example.newrv.viewHolders
 
-import adapterTypes.Description
+import com.example.newrv.adapterTypes.Description
 import android.R
 import android.graphics.Color
 import android.graphics.PorterDuff

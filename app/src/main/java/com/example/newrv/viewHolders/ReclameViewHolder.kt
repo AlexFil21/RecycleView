@@ -1,7 +1,6 @@
-package viewHolders
+package com.example.newrv.viewHolders
 
-import adapterTypes.Header
-import adapterTypes.Reclame
+import com.example.newrv.adapterTypes.Reclame
 import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView

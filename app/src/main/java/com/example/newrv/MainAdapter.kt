@@ -1,15 +1,14 @@
 package com.example.newrv
-import adapterTypes.Description
-import adapterTypes.Header
-import adapterTypes.Reclame
+import com.example.newrv.adapterTypes.Description
+import com.example.newrv.adapterTypes.Header
+import com.example.newrv.adapterTypes.Reclame
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import viewHolders.DescriptionViewHolder
-import viewHolders.HeaderViewHolder
-import viewHolders.ReclameViewHolder
+import com.example.newrv.viewHolders.DescriptionViewHolder
+import com.example.newrv.viewHolders.HeaderViewHolder
+import com.example.newrv.viewHolders.ReclameViewHolder
 
 class MainAdapter( var context: Context, var mData: List<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val TYPE_DESCRIPTION: Int = 1
